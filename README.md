@@ -1,8 +1,8 @@
 # Realidad Virtual Educativo
    
-//DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE
-//SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES
-//EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A
+//DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE  
+//SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES  
+//EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A  
 
 Trabajo presentado como requisito parcial para optar al Título de  
 INGENIERO MECATRÓNICO.  
@@ -35,19 +35,19 @@ y movilizarse en el aula.
 		
 	
 Folder:
-1. audios/
+1. audios/  
 	Reproducción auditiva de los numeros del 1 al 9
 	Integración de Musica de fondo de genero For BABIES
 	Efectos de sonidos de felicitaciones entre otros.
-2. cdn/
+2. cdn/  
 	Incluye todas las librerias a utilizar
-3. imagen/
-	Fondos
-	juego/
+3. imagen/  
+	Fondos  
+	juego/  
 		Integra todos los iconos utilizados juego1.html
-4. model/
+4. model/  
 	Modelado de room utilizado en teoria.html
-5. texturas/
+5. texturas/  
 	Integra las texturas utilizada para cuadernos y otros accesorios en salon.html
-6. video/
+6. video/  
 	Videos referencias teoricos de que suma y resta
