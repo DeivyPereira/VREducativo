@@ -18,7 +18,7 @@ Universidad Nacional Experimental Politécnica “Antonio José de Sucre”.
 Vicerrectorado “Luís Caballero Mejías”. Núcleo Guarenas  
 
 
-Archivos:
+Archivos:  
 	* Juego1.html
 		En este juego se debe seleccionar el numero correcto segun la cantidad de objetos que aparezcan, el score va sumando los avances,
 		posee graficas llamativas para los niños figuras tales como globos,caramelos, etc. El sonido de fondo es For BABIES.
