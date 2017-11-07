@@ -1,20 +1,23 @@
-     ************DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE****************
+# Realidad Virtual Educativo
+   
+   ************DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE****************
 	******************SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES************************
 	********************EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A******************************
 
-Trabajo presentado como requisito parcial para optar al Título de
-INGENIERO MECATRÓNICO
+Trabajo presentado como requisito parcial para optar al Título de  
+INGENIERO MECATRÓNICO.  
+  
+Autor: Br. Pereira Rojas Gregoris Argenis  
+Exp.: 2011200279	CI.: 23194991  
+Tutor Académico: Ing. Monica Tahan  
+Tutor Industrial: Ing. Keudyn Hernandez  
+  
+Guarenas, Venezuela. Septiembre de 2017  
+  
+Universidad Nacional Experimental Politécnica “Antonio José de Sucre”.    
+Vicerrectorado “Luís Caballero Mejías”. Núcleo Guarenas  
 
-Autor: Br. Pereira Rojas Gregoris Argenis
-Exp.: 2011200279	CI.: 23194991
-Tutor Académico: Ing. Monica Tahan
-Tutor Industrial: Ing. Keudyn Hernandez
-
-Guarenas, Venezuela. Septiembre de 2017
-
-Universidad Nacional Experimental Politécnica “Antonio José de Sucre”.
-Vicerrectorado “Luís Caballero Mejías”. Núcleo Guarenas
-
+```sh
 Archivos:
 	Juego1.html
 		En este juego se debe seleccionar el numero correcto segun la cantidad de objetos que aparezcan, el score va sumando los avances,
@@ -46,4 +49,4 @@ Folder:
 		Integra las texturas utilizada para cuadernos y otros accesorios en salon.html
 	video/
 		Videos referencias teoricos de que suma y resta
-
+```sh
