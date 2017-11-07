@@ -1,8 +1,8 @@
 # Realidad Virtual Educativo
    
-// DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE  
-// SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES  
-// EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A  
+>DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE  
+>SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES  
+>EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A  
 
 Trabajo presentado como requisito parcial para optar al Título de  
 INGENIERO MECATRÓNICO.  
@@ -35,7 +35,7 @@ con diferentes elementos tales como números que a situar su vista en este podr�
 y movilizarse en el aula.
 		
 	
-Folder:
+### Folder:
 1. audios/  
 	Reproducción auditiva de los numeros del 1 al 9
 	Integración de Musica de fondo de genero For BABIES
