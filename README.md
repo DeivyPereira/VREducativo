@@ -1,12 +1,13 @@
 # Realidad Virtual Educativo
    
-//DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE  
-//SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES  
-//EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A  
+// DESARROLLO DE SISTEMA DE APRENDIZAJE PARA MATEMATICA BASICA MEDIANTE  
+// SIMULACIÓN DE REALIDAD VIRTUAL CON DISPOSITIVOS MOVILES  
+// EN EL DEPARTAMENTO E-LEARNING DE VENETRONIC C.A  
 
 Trabajo presentado como requisito parcial para optar al Título de  
 INGENIERO MECATRÓNICO.  
   
+### Creditos
 Autor: Br. Pereira Rojas Gregoris Argenis  
 Exp.: 2011200279	CI.: 23194991  
 Tutor Académico: Ing. Monica Tahan  
@@ -18,7 +19,7 @@ Universidad Nacional Experimental Politécnica “Antonio José de Sucre”.
 Vicerrectorado “Luís Caballero Mejías”. Núcleo Guarenas  
 
 
-Archivos  
+### Archivos  
 * Juego1.html
 En este juego se debe seleccionar el numero correcto segun la cantidad de objetos que aparezcan, el score va sumando los avances,
 posee graficas llamativas para los niños figuras tales como globos,caramelos, etc. El sonido de fondo es For BABIES.
