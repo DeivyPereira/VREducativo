@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="cdn/aframe.min.js"></script>
+    <script src="cdn/aframe-extras.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37064499-6"></script>
+	<script src="cdn/readme.js"></script>
+  <script>
+        AFRAME.registerComponent('alpha-test', {
+            dependencies: ['material'],
+            init: function () {
+                this.el.getObject3D('mesh').material.alphaTest = 0.5;
+            }
+        });
+
+		AFRAME.registerComponent('video-handler',{
+		  init: function(){
+		   let el = this.el;
+		   let vid = document.querySelector("#suma");
+		   vid.pause();
+		   el.addEventListener('mouseenter',function(){
+			  vid.play();
+		   });
+		   el.addEventListener('mouseleave',function(){
+			  vid.pause();
+		   });
+		  }
+		});
+		
+			AFRAME.registerComponent('letra',{
+		  init: function(){
+			var el = this.el;  
+            var num = this.data.num;  // <a-box>
+            var defaultColor = el.getAttribute('color');
+            var audio = el.getAttribute('audio');
+		   el.addEventListener('mouseenter',function(){
+				el.setAttribute("text", "color", "#ed57ca")
+				 var success = document.querySelector('#audio'+audio);
+                 success.play();
+		   });
+		   el.addEventListener('mouseleave',function(){
+				el.setAttribute("text", "color", "white")
+		   });
+		  }
+		});
+    </script>
+</head>
+<body class="a-body " cz-shortcut-listen="true">
+<a-scene class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+    <a-assets>
+        <img id="teacher" src="imagen/teacher.png" crossorigin="anonymous">
+        <video id="suma" src="video/suma.mp4" ></video>
+		<video id="myvideo" src="video/resta.mp4"></video>
+		<img id="texturalibro1" src="texturas/libro1.jpg">
+		<img id="texturalibro2" src="texturas/libro2.jpg">
+		<img id="sky" src="imagen/sky.jpg">
+		 <audio id="audio1" crossorigin="anonymous"
+		   src="audio/1.m4a"></audio>
+		 <audio id="audio2" crossorigin="anonymous"
+		   src="audio/2.m4a"></audio>
+		 <audio id="audio3" crossorigin="anonymous"
+		   src="audio/3.m4a"></audio>
+		   <audio id="audio4" crossorigin="anonymous"
+		   src="audio/4.m4a"></audio>
+		   <audio id="audio5" crossorigin="anonymous"
+		   src="audio/5.m4a"></audio>
+		   <audio id="audio6" crossorigin="anonymous"
+		   src="audio/6.m4a"></audio>
+		   <audio id="audio7" crossorigin="anonymous"
+		   src="audio/7.m4a"></audio>
+		   <audio id="audio8" crossorigin="anonymous"
+		   src="audio/8.m4a"></audio>
+		  <audio id="audio9" crossorigin="anonymous"
+		   src="audio/9.m4a"></audio>
+		<a-mixin id="checkpoint"></a-mixin>
+        <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
+    </a-assets>
+
+    <a-plane material="src:#suma" width="16" height="9" position="-5.145 3.015 -0.521" rotation="0 90 0"
+             scale="0.2 0.2 1" geometry="height:8.9;width:21"  video-handler ></a-plane>
+			 
+<a-entity collada-model="model/room6/model.dae" scale="0.8 0.8 0.5"></a-entity>
+
+    <a-image position="-5.000 1.887  2.379" width="2" height="2.2" src="#teacher" transparent="true" alpha-test="0.5"
+             rotation="0 60 0" ></a-image>
+
+ <a-entity position="1 0 1">
+ <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.001" position="-2.293 0.802 -0.417" color="#5C5C5C" geometry="radius:0.4;height:0.01"></a-cylinder>
+ <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.001" position="3.133 0.802 -0.417" color="#5C5C5C" geometry="height:0.01;radius:0.4"></a-cylinder>
+ <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.001" position="8.966 0.802 -0.417" color="#5C5C5C" geometry="radius:0.4;height:0.01"></a-cylinder>
+ <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.001" position="8.966 0.802 -5.045" color="#5C5C5C" geometry="radius:0.4;height:0.01"></a-cylinder>
+ <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.001" position="3.133 0.802 -5.226" color="#5C5C5C" geometry="height:0.01;radius:0.4"></a-cylinder>
+ <a-cylinder checkpoint="offset:0 1.6 0" radius="1" height="0.001" position="-4.978 0.802 -5.733" color="#5C5C5C" geometry="radius:0.4;height:0.01"></a-cylinder>
+      </a-entity>
+	  
+
+	 <a-box src="#texturalibro1" height="0.3" width="0.4" rotation="-90 0 0" position="1.991 1.799 -0.274" scale="1 1 0.04"></a-box>
+	 <a-box src="#texturalibro2" height="0.3" width="0.4" rotation="-90 0 0" position="0.471 1.799 1.581" scale="1 1 0.04"></a-box>
+	 <a-box color="#4c7df7" height="0.3" width="0.4" rotation="-90 0 0" position="4.969 1.799 1.822" scale="1 1 0.04" geometry="height:0.7"></a-box>
+	 <a-box color="yellow" height="0.3" width="0.4" rotation="-90 0 0" position="1.97 1.799 -0.539" scale="1 1 0.02" geometry="width:0.3;height:0.02"></a-box>
+	 <a-tetrahedron color="blue" height="0.3" width="0.4" rotation="0 90 0" position="2.072 1.871 -2.921" scale="0.2 0.2 0.2"></a-tetrahedron>
+	 
+
+<a-entity text="align:center;alphaTest:0.2;font:mozillavr;value:1;width:37" position="-0.766 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1" alpha-test letra audio="1" ></a-entity>
+<a-entity text="align:center;font:mozillavr;value:2;width:37" position="0.336 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1" alpha-test  letra  audio="2"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:3;width:37" position="1.715 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1"  alpha-test letra audio="3"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:4;width:37" position="2.894 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1"  alpha-test letra audio="4"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:5;width:37" position="4.136 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1" alpha-test letra audio="5"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:6;width:37" position="5.289 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1" alpha-test letra audio="6"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:7;width:37" position="6.48 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1"  alpha-test letra audio="7"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:8;width:37" position="7.634 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1" alpha-test  letra audio="8"></a-entity>
+<a-entity text="align:center;font:mozillavr;value:9;width:37" position="8.876 3.324 -4.471" geometry="primitive:plane;height:3" material="opacity:0.1"  alpha-test letra audio="9"></a-entity>
+
+
+	      <a-entity camera="userHeight: 1.6" position="-0.980 0.800 -0.58" rotation="0 90 0" 
+                universal-controls="movementControls: checkpoint"
+                checkpoint-controls="mode: animate" >
+        <a-entity cursor="fuse: true; fuseTimeout: 150"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+                  material="color: #CCC; shader: flat;"
+				  >
+        </a-entity>
+      </a-entity>
+	
+	  
+	  
+	  
+<a-sky src="#sky"></a-sky>
+</a-scene>
+
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
+<script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+<script src="cdn/aframe-text-geometry-component.min.js"></script>
+<script src="cdn/jquery-1.12.4.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37064499-6"></script>
+<script src="cdn/readme.js"></script>
+
+<script>
+    AFRAME.registerComponent('numero', {
+        schema: {
+            min: {"default": {x: 1}},
+            max: {"default": {x: 10}}
+        },
+        update: function () {
+				var data = this.data;
+				var el = this.el;  
+				var t = this.data, a = t.max, e = t.min;
+				var v = Math.floor(Math.random() * a.x + e.x);
+				var img = Math.floor(Math.random() * (31 - 1) + 1);
+				var numero = Math.floor(Math.random() * (4 - 1) + 1);
+	
+				for (var i = 1; i < 10 ; i++) {
+						var posicion =  document.querySelector('#posicion'+i);
+						posicion.setAttribute("visible", "false");
+						posicion.setAttribute("src", "#image"+img);
+				}
+				for (var i = 1; i < v ; i++) {
+						var posicion =  document.querySelector('#posicion'+i);
+						posicion.setAttribute("visible", "true");
+				}
+				
+				for (var i = 1; i < 4 ; i++) {
+						var azar = Math.floor(Math.random() * (9 - 1) + 1);
+						var resultado =  document.querySelector('#resultado'+i);
+						console.log('#resultado'+i);
+						console.log(azar);
+						resultado.setAttribute("numeroazar", azar);
+				}
+					
+					
+					 var resultv =  document.querySelector('#resultado'+numero);
+					 resultv.setAttribute("numeroazar", v-1);
+					
+					
+					var valor1 = resultado1.getAttribute('numeroazar');
+					var valor2 = resultado2.getAttribute('numeroazar');
+					var valor3 = resultado3.getAttribute('numeroazar');
+					  resultado1.setAttribute("text-geometry", {
+						 value: valor1
+					 });
+					  resultado2.setAttribute("text-geometry", {
+						 value: valor2
+					 });
+					  resultado3.setAttribute("text-geometry", {
+						 value: valor3
+					 });
+					 var texto =  document.querySelector('#texto');
+						texto.setAttribute("text-geometry", {
+						 value: "Cuantas cosas hay?"
+					 });
+					 var result =  document.querySelector('#resulbox');
+					 result.setAttribute("numeror", v-1);
+        }
+    });
+	AFRAME.registerComponent('resultado', {
+        init: function () {
+			var data = this.data;
+			var el = this.el;  
+            el.addEventListener('click', function () {
+				var result =  document.querySelector('#resulbox');
+				var point =  document.querySelector('#point');
+				var pointresult = point.getAttribute('text');
+				var num = el.getAttribute('numeroazar');
+				var valorpositivo = result.getAttribute('numeror');
+                if (num == valorpositivo) {
+                    var success = document.querySelector('#click-sound-success');
+                    success.play();
+                    console.log('GANASTE');
+                   setTimeout(function(){
+						var scene =  document.querySelector('#scene');
+						var act = scene.components.numero;
+						act.update();
+                    }, 2000);
+					var abc = parseInt(pointresult["value"])+1;
+					point.setAttribute("text", {
+                     value: abc.toString()
+					});
+                } else {
+                    var error = document.querySelector('#click-sound-error');
+                    error.play();
+					 setTimeout(function(){
+						var scene =  document.querySelector('#scene');
+						var act = scene.components.numero;
+						act.update();
+                    }, 2000);
+					point.setAttribute("text", {
+                     value: "0"
+					});
+                }
+            });
+        }
+    });
+</script>
+<body>
+<a-scene >
+
+
+    <a-assets>
+        <audio id="click-sound-error" crossorigin="anonymous"
+               src="audio/twotone1.ogg"></audio>
+        <audio id="click-sound-success" crossorigin="anonymous"
+               src="audio/game_pass.mp3"></audio>
+    
+	  <audio id="musicfondo" crossorigin="anonymous"
+               src="audio/forbabies.mp3"></audio>
+		<img id="sky" src="imagen/sky4.jpg">
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+
+		<img id="image1" src="imagen/juego/1.png">
+		<img id="image2" src="imagen/juego/2.png">
+		<img id="image3" src="imagen/juego/3.png">
+		<img id="image4" src="imagen/juego/4.png">
+		<img id="image5" src="imagen/juego/5.png">
+		<img id="image6" src="imagen/juego/6.png">
+		<img id="image7" src="imagen/juego/7.png">
+		<img id="image8" src="imagen/juego/8.png">
+		<img id="image9" src="imagen/juego/9.png">
+		<img id="image10" src="imagen/juego/10.png">
+		<img id="image11" src="imagen/juego/11.png">
+		<img id="image12" src="imagen/juego/12.png">
+		<img id="image13" src="imagen/juego/13.png">
+		<img id="image14" src="imagen/juego/14.png">
+		<img id="image15" src="imagen/juego/15.png">
+		<img id="image16" src="imagen/juego/16.png">
+		<img id="image17" src="imagen/juego/17.png">
+		<img id="image18" src="imagen/juego/18.png">
+		<img id="image19" src="imagen/juego/19.png">
+		<img id="image20" src="imagen/juego/20.png">
+		<img id="image21" src="imagen/juego/21.png">
+		<img id="image22" src="imagen/juego/22.png">
+		<img id="image23" src="imagen/juego/23.png">
+		<img id="image24" src="imagen/juego/24.png">
+		<img id="image25" src="imagen/juego/25.png">
+		<img id="image26" src="imagen/juego/26.png">
+		<img id="image27" src="imagen/juego/27.png">
+		<img id="image28" src="imagen/juego/28.png">
+		<img id="image29" src="imagen/juego/29.png">
+		<img id="image30" src="imagen/juego/30.png">
+		<img id="image31" src="imagen/juego/31.png">
+    </a-assets>
+
+    <a-entity sound="src: #musicfondo; loop:true; autoplay: true"></a-entity>
+	
+	<a-entity position="-3.457 2.806 -2.41" id="texto" "></a-entity>
+    <a-image   width="1" height="1"  position="-3.750 1.806 -2.410"   id="posicion1" ></a-image>
+    <a-image   width="1" height="1" position="-2.645 1.806 -2.410"  id="posicion2"></a-image>
+    <a-image   width="1" height="1" position="-1.547 1.806 -2.410"   id="posicion3"></a-image>
+    <a-image   width="1" height="1" position="-0.562 1.806 -2.410"  id="posicion4"></a-image>
+    <a-image   width="1" height="1" position="0.400 1.806 -2.410"   id="posicion5"></a-image>
+    <a-image   width="1" height="1" position="1.384 1.806 -2.410"   id="posicion6"></a-image>
+    <a-image   width="1" height="1" position="2.407 1.806 -2.410"   id="posicion7"></a-image>
+    <a-image   width="1" height="1" position="3.401 1.806 -2.410"   id="posicion8"></a-image>
+    <a-image   width="1" height="1" position="4.307 1.806 -2.410"  id="posicion9"></a-image>
+
+<a-sky src="#sky"  numero id="scene"></a-sky>
+
+	<a-entity  position="-1.489 0.706 -0.661"  resultado  id="resultado1"></a-entity>
+<a-entity  position="-0.481 0.706 -0.661"  resultado  id="resultado2"></a-entity>
+<a-entity  position="0.592 0.706 -0.661"  resultado  id="resultado3" ></a-entity>
+
+<a-entity     id="resulbox" ></a-entity>
+
+
+
+    <a-camera position="0 0 1.387">
+        <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                  position="0 0 -1" dur: 150;
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat"
+                >
+			<a-plane text="width:10;color:#000000;value:0;align:center" position="1.906 -0.703 -0.293" scale="0.5 0.2 0.5" material="height:100" id="point" ></a-plane>
+        </a-entity>
+
+    </a-camera>
+	
+
+</a-scene>
+</body>

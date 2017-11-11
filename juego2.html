@@ -1,0 +1,99 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
+<script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+<script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+<script src="cdn/aframe-text-geometry-component.min.js"></script>
+<script src="cdn/jquery-1.12.4.js"></script>
+<script src="cdn/build.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37064499-6"></script>
+<script src="cdn/readme.js"></script>
+
+<script>
+    AFRAME.registerComponent('numero', {
+        schema: {
+            num: {type: 'number', default: 0}
+        },
+        init: function () {
+            var data = this.data;
+            var el = this.el;  
+            el.addEventListener('click', function () {
+				var result =  document.querySelector('#resulbox');
+				var num = el.getAttribute('numeroazar');
+				var valorpositivo = result.getAttribute('numeror');
+				console.log(num);
+				console.log(valorpositivo);
+                if (num == valorpositivo) {
+                    var success = document.querySelector('#click-sound-success');
+                    success.play();
+                    console.log('GANASTE');
+                   setTimeout(function(){
+                  
+						for (var i = 1; i < 8; i++) {
+							var posicion =  document.querySelector('#posicion'+i);
+							posicion.setAttribute("visible", "true");
+							var act = posicion.components.randomcolor;
+							var act2 = posicion.components.randomnum;
+							act.update();
+							act2.update();
+						}
+					  var fooComponent = result.components.operacionm;
+					fooComponent.update();
+                    }, 8000);
+                } else {
+                    var error = document.querySelector('#click-sound-error');
+                    error.play();
+					el.setAttribute("visible", "false");
+                }
+            });
+        }
+    });
+	
+</script>
+<body>
+<a-scene >
+
+
+    <a-assets>
+        <audio id="click-sound-error" crossorigin="anonymous"
+               src="audio/twotone1.ogg"></audio>
+        <audio id="click-sound-success" crossorigin="anonymous"
+               src="audio/win.mp3"></audio>
+        <audio id="musicfondo" crossorigin="anonymous"
+               src="audio/builder.mp3"></audio>
+		<img id="sky" src="imagen/sky3.png">
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+
+    </a-assets>
+
+    <a-entity sound="src: #musicfondo; loop:true; autoplay: true"></a-entity>
+	
+	
+	
+    <a-entity randomcolor  randomnum numero  position="-3.750 1.806 -2.410"  geometry="primitive: box" id="posicion1"></a-entity>
+    <a-entity randomcolor  randomnum numero position="-2.645 1.806 -2.410" geometry="primitive: box" id="posicion2"></a-entity>
+    <a-entity randomcolor  randomnum numero position="-1.547 1.806 -2.410" geometry="primitive: box" id="posicion3"></a-entity>
+    <a-entity randomcolor  randomnum numero position="-0.562 1.806 -2.410" geometry="primitive: box" id="posicion4"></a-entity>
+    <a-entity randomcolor  randomnum numero position="0.400 1.806 -2.410" geometry="primitive: box" id="posicion5"></a-entity>
+    <a-entity randomcolor  randomnum numero position="1.384 1.806 -2.410" geometry="primitive: box" id="posicion6"></a-entity>
+    <a-entity randomcolor  randomnum numero position="2.407 1.806 -2.410" geometry="primitive: box" id="posicion7"></a-entity>
+
+<a-sky src="#sky" id="scene"></a-sky>
+
+	<a-entity  position="-1.394 0.706 -1.524"  id="resulbox" rotation="-15 0 0" operacionm random-color ></a-entity>
+
+
+
+
+
+    <a-camera position="0 0 0">
+        <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                  position="0 0 -1" dur: 150;
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat"
+                >
+        </a-entity>
+
+    </a-camera>
+</a-scene>
+</body>
